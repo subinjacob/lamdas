@@ -1,9 +1,7 @@
 package enumref;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class SpecialityCodeProcessor {
@@ -11,7 +9,7 @@ public class SpecialityCodeProcessor {
     public static void main(String args[]){
         List<SpecialityCodeVO> specialityCodeVOList = new ArrayList<>();
         SpecialityCodeVO sp1 = new SpecialityCodeVO();
-        sp1.setCode("530");
+        sp1.setCode(null);
         specialityCodeVOList.add(sp1);
         SpecialityCodeVO sp2 = new SpecialityCodeVO();
         sp2.setCode("540");
@@ -30,8 +28,11 @@ public class SpecialityCodeProcessor {
 
         System.out.println("Keys are"+map.keySet());
         SpecialityValidator specialityValidator = new SpecialityValidator();
-        specialityValidator.validate(map.get(specialityCodeVO.getCode()),specialityCodeVO);
+        Optional.ofNullable(specialityCodeVO.getCode()).map(c->specialityValidator.validate(map.get(specialityCodeVO.getCode()),specialityCodeVO));
+      //  specialityValidator.validate(map.get(specialityCodeVO.getCode()),specialityCodeVO);
 
         return specialityCodeVO;
     }
+
+
 }

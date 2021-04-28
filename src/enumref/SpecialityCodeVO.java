@@ -7,6 +7,14 @@ public class SpecialityCodeVO {
     private String code;
     private Date startDate;
 
+    public SpecialityCodeVO() {
+    }
+
+    public SpecialityCodeVO(String code, Date startDate) {
+        this.code = code;
+        this.startDate = startDate;
+    }
+
     public String getCode() {
         return code;
     }
