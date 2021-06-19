@@ -1,4 +1,4 @@
-package enumref;
+package enumrefs;
 
 import java.util.Date;
 
@@ -29,5 +29,13 @@ public class SpecialityCodeVO {
 
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
+    }
+
+    @Override
+    public String toString() {
+        return "SpecialityCodeVO{" +
+                "code='" + code + '\'' +
+                ", startDate=" + startDate +
+                '}';
     }
 }

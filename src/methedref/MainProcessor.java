@@ -1,4 +1,4 @@
-package methodref;
+package methedref;
 
 import java.util.function.Function;
 
